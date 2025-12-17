@@ -1,20 +1,17 @@
-Feature: Open web page
-  Yo como manuel
-  quiero realizar una compra por la pagina web
-  Para comprobar el funcionamiento
+@opencart
+Feature: Compra de productos en OpenCart
+  Como usuario de la tienda OpenCart
+  Quiero realizar una compra completa
+  Para verificar el funcionamiento del flujo de checkout
 
-
-
-  @prueba
-  Scenario Outline: Compra de articulos en la tienda
+  @prueba @smoke
+  Scenario Outline: Compra exitosa de artículos como invitado
     Given "<actor>" abre el navegador
     When el actor agrega los productos al carrito
     And el actor visualiza el carrito
     And el actor completa la información de la compra
     Then debería ver el mensaje de confirmación del pedido
 
-
     Examples:
-      | actor  | year | month | day |
-      | Manuel | 2025 | 10    | 15  |
-      #| Manuel | 2026 | 02    | 05  |
+      | actor  |
+      | Manuel |

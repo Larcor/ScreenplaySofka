@@ -1,12 +1,16 @@
 package co.com.screenplay.project.ui;
 
-import net.serenitybdd.core.annotations.findby.By;
-import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.screenplay.targets.Target;
 
-public class OrderSuccessfullyPage extends PageObject {
 
-   public static Target ORDER_SUCCESS_MESSAGE = Target.the("order success confirmation message")
-            .located(By.xpath("//div[@id='content']//h1[contains(., 'Your order has been placed!')]"));
+public final class OrderSuccessfullyPage {
 
+   private OrderSuccessfullyPage() {
+   }
+
+   public static final Target ORDER_SUCCESS_MESSAGE = Target.the("order success confirmation message")
+         .locatedBy("#content h1");
+
+   public static final Target CONTINUE_BUTTON = Target.the("continue shopping button")
+         .locatedBy("a.btn.btn-primary");
 }

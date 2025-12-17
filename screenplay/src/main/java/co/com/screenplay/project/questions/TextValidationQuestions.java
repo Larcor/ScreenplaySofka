@@ -5,14 +5,15 @@ import net.serenitybdd.screenplay.Question;
 
 import static co.com.screenplay.project.ui.OrderSuccessfullyPage.ORDER_SUCCESS_MESSAGE;
 
-
+@Deprecated
 public class TextValidationQuestions implements Question<String> {
 
     @Override
     public String answeredBy(Actor actor) {
-        return ORDER_SUCCESS_MESSAGE.resolveFor(actor).getText().trim();
+        return TheText.of(ORDER_SUCCESS_MESSAGE).answeredBy(actor);
     }
 
+    @Deprecated
     public static TextValidationQuestions text() {
         return new TextValidationQuestions();
     }

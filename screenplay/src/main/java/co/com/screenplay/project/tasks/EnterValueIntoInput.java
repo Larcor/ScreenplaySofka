@@ -1,5 +1,6 @@
 package co.com.screenplay.project.tasks;
 
+import net.serenitybdd.annotations.Step;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
@@ -25,19 +26,8 @@ public class EnterValueIntoInput implements Task {
         this.clearFirst = clearFirst;
     }
 
-    public static EnterValueIntoInput with(Target inputField, String value) {
-        return new EnterValueIntoInput(inputField, value, true);
-    }
-
-    public static EnterValueIntoInput withoutClearing(Target inputField, String value) {
-        return new EnterValueIntoInput(inputField, value, false);
-    }
-
-    public static EnterValueIntoInput appendedTo(Target inputField, String value) {
-        return new EnterValueIntoInput(inputField, value, false);
-    }
-
     @Override
+    @Step("{0} ingresa valor en el campo")
     public <T extends Actor> void performAs(T actor) {
         List<Performable> actions = new ArrayList<>();
 
@@ -50,5 +40,17 @@ public class EnterValueIntoInput implements Task {
         actions.add(Enter.theValue(value).into(inputField));
 
         actor.attemptsTo(actions.toArray(new Performable[0]));
+    }
+
+    public static EnterValueIntoInput with(Target inputField, String value) {
+        return new EnterValueIntoInput(inputField, value, true);
+    }
+
+    public static EnterValueIntoInput withoutClearing(Target inputField, String value) {
+        return new EnterValueIntoInput(inputField, value, false);
+    }
+
+    public static EnterValueIntoInput appendedTo(Target inputField, String value) {
+        return new EnterValueIntoInput(inputField, value, false);
     }
 }

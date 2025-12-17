@@ -1,0 +1,61 @@
+# Datos de prueba para automatización OpenCart
+
+customers:
+  guest_user:
+    firstName: "Test"
+    lastName: "User"
+    email: "test.user@automation.com"
+    phone: "3001234567"
+    address: "Calle Automatización # 123"
+    city: "Bogotá"
+    postcode: "110111"
+    country: "Colombia"
+    zone: "Bogota D.C."
+    comment: "Pedido de prueba automatizada"
+
+  premium_user:
+    firstName: "Premium"
+    lastName: "Customer"
+    email: "premium@test.com"
+    phone: "3009876543"
+    address: "Avenida Premium # 456"
+    city: "Medellín"
+    postcode: "050001"
+    country: "Colombia"
+    zone: "Antioquia"
+    comment: "Cliente premium"
+
+products:
+  macbook:
+    id: "43"
+    name: "MacBook"
+    price: "$602.00"
+  
+  iphone:
+    id: "40"
+    name: "iPhone"
+    price: "$123.20"
+  
+  apple_cinema:
+    id: "42"
+    name: "Apple Cinema 30\""
+    price: "$122.00"
+  
+  canon:
+    id: "30"
+    name: "Canon EOS 5D"
+    price: "$98.00"
+
+# URLs y configuración de ambiente
+environments:
+  default:
+    base_url: "https://opencart.abstracta.us/"
+  
+  staging:
+    base_url: "https://staging.opencart.abstracta.us/"
+
+# Mensajes esperados para validaciones
+expected_messages:
+  order_success: "Your order has been placed!"
+  cart_empty: "Your shopping cart is empty!"
+  product_added: "Success: You have added"
