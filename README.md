@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Proyecto de automatización de pruebas E2E para la tienda OpenCart utilizando el patrón **Screenplay** con Serenity BDD. Implementa un flujo de compra completo como invitado, demostrando las mejores prácticas de automatización.
+Proyecto de automatización de pruebas E2E para la tienda OpenCart y la aplicación Siigo utilizando el patrón **Screenplay** con Serenity BDD. Implementa flujos de compra y creación de clientes, demostrando las mejores prácticas de automatización.
 
 ## 🏗️ Arquitectura del Proyecto
 
@@ -105,9 +105,21 @@ java -version  # Debe mostrar 17.x
 ./gradlew clean test -Dcucumber.filter.tags="@prueba"
 ```
 
-### Generar reportes
 ```bash
 ./gradlew clean test aggregate
+```
+
+### Ejecutar automatización de Siigo
+Para ejecutar el flujo de creación de cliente en Siigo, se debe ejecutar el runner específico:
+
+```bash
+./gradlew clean test --tests RunnerSiigoCreateClient
+```
+
+O utilizando el tag de Cucumber:
+
+```bash
+./gradlew clean test -Dcucumber.filter.tags="@e2e"
 ```
 
 📊 Los reportes se generan en: `target/site/serenity/index.html`
