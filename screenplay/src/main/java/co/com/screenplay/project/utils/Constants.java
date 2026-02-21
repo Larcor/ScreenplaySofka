@@ -11,5 +11,10 @@ public class Constants {
     public static final String APPLE_CINEMA = "42";
     public static final String CANON = "30";
 
+    // Siigo
+    public static final String SIIGO_URL = "https://qastaging.siigo.com/#/login";
+    public static final String SIIGO_EMAIL = "retoautomationsiigo2@yopmail.com";
+    public static final String SIIGO_PASSWORD = "J1h4{zMTV3";
+
 
 }

@@ -40,3 +40,12 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+### Serenity BDD ###
+target/
+serenity.log
+
+### Project Logs ###
+build_log.txt
+test_output.txt
+build_output.txt
